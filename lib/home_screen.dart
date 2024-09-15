@@ -1,3 +1,4 @@
+import 'package:fieldfight/extension/slide_from_left_animation_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -31,9 +32,21 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             //Text Logo
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  "Field Fight",
+                  "Field",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontFamily: "RussoOne",
+                      fontSize: MediaQuery.sizeOf(context).width * 0.1,
+                      fontWeight: FontWeight.w600),
+                ).slideFromLeft(),
+                const SizedBox(
+                  width: 16,
+                ),
+                Text(
+                  "Fight",
                   style: TextStyle(
                       color: Colors.white,
                       fontFamily: "RussoOne",
