@@ -1,4 +1,5 @@
 import 'package:fieldfight/extension/slide_from_left_animation_extension.dart';
+import 'package:fieldfight/extension/slide_from_right_animation_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -52,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontFamily: "RussoOne",
                       fontSize: MediaQuery.sizeOf(context).width * 0.1,
                       fontWeight: FontWeight.w600),
-                ),
+                ).sildeFromRight()
               ],
             )
           ],
