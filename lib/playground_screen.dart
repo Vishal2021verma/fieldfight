@@ -1,7 +1,7 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shimmer/shimmer.dart';
 
 class PlayGroundScreen extends StatefulWidget {
   const PlayGroundScreen({
@@ -125,35 +125,188 @@ class _PlayGroundScreenState extends State<PlayGroundScreen> {
             ),
           ),
           bottomContainerheight >= MediaQuery.sizeOf(context).height
-              ? const Positioned(
+              ? Positioned(
                   top: 0,
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Center(
-                    child: Text(
-                      "Orange Wins",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 36),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.only(top: 100),
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "Orange \nWinner",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 60),
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const PlayGroundScreen()));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.purple, width: 5),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(122, 0, 0, 0),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                              ]),
+                          child: Shimmer.fromColors(
+                            baseColor: Colors.red,
+                            highlightColor: Colors.yellow,
+                            child: const Text(
+                              "Start",
+                              style: TextStyle(
+                                  fontFamily: "RussoOne",
+                                  color: Color(0xffFF7F3E),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const PlayGroundScreen()));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.purple, width: 5),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(122, 0, 0, 0),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                              ]),
+                          child: const Text(
+                            "Home",
+                            style: TextStyle(
+                                fontFamily: "RussoOne",
+                                color: Color(0xffFF7F3E),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 60,
+                      )
+                    ],
                   ))
               : const SizedBox.shrink(),
           bottomContainerheight <= 1
-              ? const Positioned(
+              ? Positioned(
                   top: 0,
                   bottom: 0,
                   left: 0,
                   right: 0,
-                  child: Center(
-                    child: Text(
-                      "Blue Wins",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.w800,
-                          fontSize: 36),
-                    ),
+                  child: Column(
+                    children: [
+                      Container(
+                        alignment: Alignment.center,
+                        child: const Text(
+                          "Blue Winner",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w800,
+                              fontSize: 36),
+                        ),
+                      ),
+                      Spacer(),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const PlayGroundScreen()));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.purple, width: 5),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(122, 0, 0, 0),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                              ]),
+                          child: Shimmer.fromColors(
+                            baseColor: Colors.red,
+                            highlightColor: Colors.yellow,
+                            child: const Text(
+                              "Start",
+                              style: TextStyle(
+                                  fontFamily: "RussoOne",
+                                  color: Color(0xffFF7F3E),
+                                  fontSize: 40,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (context) => const PlayGroundScreen()));
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.all(20),
+                          decoration: BoxDecoration(
+                              border:
+                                  Border.all(color: Colors.purple, width: 5),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(20),
+                              boxShadow: const [
+                                BoxShadow(
+                                  color: Color.fromARGB(122, 0, 0, 0),
+                                  spreadRadius: 0,
+                                  blurRadius: 10,
+                                ),
+                              ]),
+                          child: const Text(
+                            "Home",
+                            style: TextStyle(
+                                fontFamily: "RussoOne",
+                                color: Color(0xffFF7F3E),
+                                fontSize: 24,
+                                fontWeight: FontWeight.w500),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        height: 60,
+                      )
+                    ],
                   ))
               : const SizedBox.shrink(),
           countDownWidget()

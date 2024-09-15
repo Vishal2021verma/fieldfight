@@ -1,12 +1,12 @@
 import 'package:fieldfight/extension/slide_from_left_animation_extension.dart';
 import 'package:fieldfight/extension/slide_from_right_animation_extension.dart';
+import 'package:fieldfight/playground_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shimmer/shimmer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
-
   @override
   State<HomeScreen> createState() => _HomeScreenState();
 }
@@ -57,11 +57,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 ).sildeFromRight()
               ],
             ),
-
-            Spacer(),
-
+            const Spacer(),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.of(context).push(MaterialPageRoute(
+                    builder: (context) => const PlayGroundScreen()));
+              },
               child: Container(
                 padding: const EdgeInsets.all(40),
                 decoration: BoxDecoration(
@@ -89,7 +90,6 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-
             SizedBox(
               height: MediaQuery.sizeOf(context).height * 0.15,
             )
